@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TU ESTUDIO DE PERITOS | Autorizaciones y licencias</title>
+  <meta name="description" content="Revisión documental y técnica para expedientes, legalizaciones, licencias de actividad, adecuaciones y contraste entre proyecto, obra y requisitos administrativos." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --card2:#16213a;
+      --accent:#4f9cff;
+      --accent2:#22c55e;
+      --text:#e8eefc;
+      --muted:#a9b4cc;
+      --line:rgba(255,255,255,.08);
+      --danger:#ff6b6b;
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+      --radius:18px;
+      --max:1180px;
+    }
+    *{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-top: 10px;
+}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79,156,255,.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(34,197,94,.12), transparent 26%),
+        linear-gradient(180deg, #08101d 0%, #0b1220 100%);
+      color:var(--text);
+     
+    }
+    a{
+	color: #4474C7;
+	text-decoration: none
+}
+    .container{width:min(100% - 32px, var(--max)); margin:auto}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(14px);
+      background:rgba(8,16,29,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    }
+    .brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    /* [disabled]letter-spacing: .2px; */
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background:linear-gradient(135deg, var(--accent), #8b5cf6);
+      box-shadow:0 10px 24px rgba(79,156,255,.25);
+      display:grid; place-items:center; font-weight:900;
+    }
+    .menu{display:flex; flex-wrap:wrap; gap:16px; color:var(--muted); font-size:0.95rem}
+    .menu a:hover{color:var(--text)}
+    .hero{
+      padding:78px 0 30px;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:stretch;
+    }
+    .hero h1{
+      margin:0 0 16px; font-size:clamp(2rem, 4vw, 4.2rem);
+    }
+    .hero p{margin:0 0 22px; color:var(--muted); font-size:1.05rem; max-width:62ch}
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    .btn{
+      padding:14px 20px; border-radius:14px; font-weight:700; border:1px solid transparent;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    }
+    .btn.primary{
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    color: #0A121F
+}
+    .btn.secondary{border-color:var(--line); background:rgba(255,255,255,.03); color:var(--text)}
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{
+      padding:26px;
+      display:flex; flex-direction:column; justify-content:space-between;
+      min-height:100%;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(34,197,94,.12); color:#b9f6c9;
+      border:1px solid rgba(34,197,94,.25);
+      padding:8px 12px; border-radius:999px; font-size:.9rem; width:max-content;
+    }
+    .stats{
+      display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; margin-top:20px;
+    }
+    .stat{
+      padding:16px; border-radius:16px; background:rgba(255,255,255,.04); border:1px solid var(--line);
+    }
+    .stat strong{display:block; font-size:1.35rem; margin-bottom:4px}
+    .stat span{color:var(--muted); font-size:.93rem}
+    section{padding:20px 0 26px}
+    .section-title{
+      display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:16px;
+    }
+    .section-title h2{margin:0; font-size:1.65rem}
+    .section-title p{
+	margin: 0;
+	color: #4474C7;
+	max-width: 60ch
+}
+    .grid-3{
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;
+    }
+    .grid-2{
+      display:grid; grid-template-columns:repeat(2, 1fr); gap:18px;
+    }
+    .card{
+      padding:22px;
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 10px}
+    .card p,.card li{color:var(--muted)}
+    ul.clean{margin:0; padding-left:18px}
+    .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .pill{
+      padding:8px 11px; border-radius:999px;
+      background:rgba(79,156,255,.1); border:1px solid rgba(79,156,255,.16);
+      color:#cfe0ff; font-size:.9rem;
+    }
+    .warning{
+      border-left:4px solid var(--danger);
+      background:rgba(255,107,107,.08);
+    }
+    .footer{
+      padding:30px 0 42px; color:var(--muted); border-top:1px solid var(--line); margin-top:18px;
+    }
+    .contact{
+      display:grid; grid-template-columns:1fr 1fr; gap:18px;
+    }
+    .form{
+      display:grid; gap:12px;
+    }
+    input, textarea, select{
+    width: 80%;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 14px;
+    border-radius: 14px;
+    border: 5px groove rgba(154,110,41,1.00);
+    background: rgba(8,19,31,1.00);
+    color: #4474C7;
+    outline: none;
+    }
+    textarea{min-height:130px; resize:vertical}
+    .note{font-size:.92rem; color:var(--muted)}
+    .map-wrapper{
+      margin-top: 12px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      height: 320px;
+    }
+    .map-wrapper iframe{
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+    .contact-info{
+      margin-top: 18px;
+      color: var(--muted);
+    }
+    .contact-info p{
+      margin: 6px 0;
+    }
+    @media (max-width:900px){
+      .hero-grid,.grid-3,.grid-2,.contact{grid-template-columns:1fr}
+      .menu{display:none}
+      .section-title{flex-direction:column; align-items:flex-start}
+.renovable {
+}
+    }
+  .pci {
+}
+  .hvac {
+}
+  
+
+    /* Hero dinámico */
+    .hero, .site-hero, .intro, .top-section, header.hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before, .site-hero::before, .intro::before, .top-section::before, header.hero::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto auto;
+      width: 32rem;
+      height: 32rem;
+      background: radial-gradient(circle, rgba(13,110,253,0.16) 0%, rgba(13,110,253,0.06) 38%, rgba(13,110,253,0) 72%);
+      filter: blur(8px);
+      animation: floatOrb 10s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero::after, .site-hero::after, .intro::after, .top-section::after, header.hero::after {
+      content: "";
+      position: absolute;
+      left: -8rem;
+      bottom: -8rem;
+      width: 22rem;
+      height: 22rem;
+      background: radial-gradient(circle, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.03) 42%, rgba(0,0,0,0) 75%);
+      animation: floatOrbSecondary 12s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero > *, .site-hero > *, .intro > *, .top-section > *, header.hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-loaded .hero h1,
+    .page-loaded .site-hero h1,
+    .page-loaded .intro h1,
+    .page-loaded .top-section h1,
+    .page-loaded header.hero h1,
+    .page-loaded .hero h2,
+    .page-loaded .site-hero h2,
+    .page-loaded .intro h2,
+    .page-loaded .top-section h2,
+    .page-loaded header.hero h2,
+    .page-loaded .hero p,
+    .page-loaded .site-hero p,
+    .page-loaded .intro p,
+    .page-loaded .top-section p,
+    .page-loaded header.hero p,
+    .page-loaded .hero .btn,
+    .page-loaded .site-hero .btn,
+    .page-loaded .intro .btn,
+    .page-loaded .top-section .btn,
+    .page-loaded header.hero .btn,
+    .page-loaded .hero .cta,
+    .page-loaded .site-hero .cta,
+    .page-loaded .intro .cta,
+    .page-loaded .top-section .cta,
+    .page-loaded header.hero .cta {
+      animation: revealUp 0.9s cubic-bezier(.2,.65,.2,1) both;
+    }
+
+    .page-loaded .hero p,
+    .page-loaded .site-hero p,
+    .page-loaded .intro p,
+    .page-loaded .top-section p,
+    .page-loaded header.hero p {
+      animation-delay: .16s;
+    }
+
+    .page-loaded .hero .btn,
+    .page-loaded .site-hero .btn,
+    .page-loaded .intro .btn,
+    .page-loaded .top-section .btn,
+    .page-loaded header.hero .btn,
+    .page-loaded .hero .cta,
+    .page-loaded .site-hero .cta,
+    .page-loaded .intro .cta,
+    .page-loaded .top-section .cta,
+    .page-loaded header.hero .cta {
+      animation-delay: .28s;
+    }
+
+    .scroll-header {
+      backdrop-filter: saturate(140%) blur(10px);
+      transition: background-color .35s ease, box-shadow .35s ease, padding .35s ease, transform .35s ease;
+    }
+
+    .scroll-header.is-scrolled {
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatOrb {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(-18px, 16px, 0) scale(1.05); }
+    }
+
+    @keyframes floatOrbSecondary {
+      0%,100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(22px,-14px,0); }
+    }
+
+    .parallax-node {
+      will-change: transform;
+      transition: transform .12s linear;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before, .site-hero::before, .intro::before, .top-section::before, header.hero::before,
+      .hero::after, .site-hero::after, .intro::after, .top-section::after, header.hero::after,
+      .page-loaded .hero h1, .page-loaded .site-hero h1, .page-loaded .intro h1, .page-loaded .top-section h1, .page-loaded header.hero h1,
+      .page-loaded .hero h2, .page-loaded .site-hero h2, .page-loaded .intro h2, .page-loaded .top-section h2, .page-loaded header.hero h2,
+      .page-loaded .hero p, .page-loaded .site-hero p, .page-loaded .intro p, .page-loaded .top-section p, .page-loaded header.hero p,
+      .page-loaded .hero .btn, .page-loaded .site-hero .btn, .page-loaded .intro .btn, .page-loaded .top-section .btn, .page-loaded header.hero .btn,
+      .page-loaded .hero .cta, .page-loaded .site-hero .cta, .page-loaded .intro .cta, .page-loaded .top-section .cta, .page-loaded header.hero .cta {
+        animation: none !important;
+        transition: none !important;
+      }
+      .parallax-node { transform: none !important; }
+    }
+
+
+
+    /* Header no fijo */
+    header,
+    .site-header,
+    .main-header,
+    .topbar,
+    .navbar {
+      position: relative !important;
+      top: auto !important;
+      inset: auto !important;
+      width: 100%;
+    }
+
+    body {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+  </style>
+  </head>
+<body class="page-loaded">
+  <header class="topbar">
+    <div class="nav">
+      <div class="brand">
+<div class="logo">TP</div>
+<div>&nbsp;</div>
+        <div>
+          <div>TU ESTUDIO DE PERITOS&nbsp;   &nbsp;</div>
+        <small style="color:var(--muted)">Instalaciones · CTE · Informes técnicos</small>        </div>
+      </div>
+      <nav class="menu">
+             
+		    <select name="servicio">&nbsp; required> 
+              <option value="">Selecciona un servicio</option>
+              <option value="Instalaciones">Instalaciones eléctricas de baja tensión</option>
+              <option value="Protección contra incendios">Protección contra incendios</option>
+              <option value="Energía renovables">Energías renovables</option>
+              <option value="HVAC">HVAC / RITE</option>
+              <option value="Autorizaciones">Autorizaciones y Licencias</option>
+			<option value="Problemas con tu obra">CTE</option>
+              <option value="Tasaciones">Tasaciones</option>
+            </select> </a>
+        
+        <a href="#contacto">&nbsp; &nbsp; &nbsp; Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">Asistencia técnica documental</span>
+          <h1>Soporte técnico para autorizaciones, licencias e incidencias administrativas.</h1>
+          <p>
+            Revisión documental y técnica para expedientes, legalizaciones, licencias de actividad, adecuaciones y contraste entre proyecto, obra y requisitos administrativos.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#contacto">Solicitar valoración</a>
+            <a class="btn secondary" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+
+        <aside class="panel hero-card">
+          <div>
+            <h3 style="margin-top:0">Áreas de actuación</h3>
+            <p class="note">Orientado a informes, periciales, revisión documental, detección de patologías y soporte en reclamaciones técnicas.</p>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>BT / AT</strong><span>Instalaciones eléctricas</span></div>
+            <div class="stat"><strong>PCI</strong><span>Incendios y seguridad</span></div>
+            <div class="stat"><strong>RITE / HVAC</strong><span>Climatización y ventilación</span></div>
+            <div class="stat"><strong>CTE</strong><span>Edificación y obra nueva</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="section-title">
+        <h2>Autorizaciones y licencias</h2>
+        <p><strong>Apoyo técnico para expedientes, documentación, legalizaciones y análisis de cumplimiento exigible en instalaciones y edificación.</strong></p>
+      </div>
+
+            <div class="grid-3">
+        <article class="card">
+          <h3>Autorizaciones y licencias</h3>
+          <p>Apoyo técnico para expedientes, documentación, legalizaciones y análisis de cumplimiento exigible en instalaciones y edificación.</p>
+          <div class="pill-row">
+            <span class="pill">Informe técnico</span>
+            <span class="pill">Pericial</span>
+            <span class="pill">Revisión</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Expedientes y licencias</h3>
+          <p>Revisión de memoria, planos, certificados y coherencia documental.</p>
+          <div class="pill-row">
+            <span class="pill">Diagnóstico</span>
+            <span class="pill">Cumplimiento</span>
+            <span class="pill">Patologías</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Incidencias y subsanaciones</h3>
+          <p>Detección de carencias técnicas en expedientes administrativos.</p>
+          <div class="pill-row">
+            <span class="pill">Documentación</span>
+            <span class="pill">Análisis</span>
+            <span class="pill">Soporte técnico</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="especialidades">
+      <div class="section-title">
+        <h2>Documentación técnica</h2>
+        <p><strong>Acompañamiento técnico en procedimientos donde el criterio documental resulta decisivo.</strong></p>
+      </div>
+
+            <div class="grid-2">
+        <article class="card">
+          <h3>Expedientes y licencias</h3>
+          <ul class="clean">
+            <li>Revisión de memoria, planos, certificados y coherencia documental.</li>
+            <li>Análisis técnico para licencias de actividad, apertura o regularización.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Incidencias y subsanaciones</h3>
+          <ul class="clean">
+            <li>Detección de carencias técnicas en expedientes administrativos.</li>
+            <li>Apoyo en alegaciones, requerimientos y procesos de subsanación.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="problemas">
+      <div class="section-title">
+        <h2>Situaciones comunes</h2>
+        <p><strong>Casos en los que una revisión técnica documental reduce riesgos y retrasos.</strong></p>
+      </div>
+
+            <div class="card warning">
+        <ul class="clean">
+          <li>Expedientes incompletos o incoherentes con la realidad ejecutada.</li>
+          <li>Requerimientos municipales o sectoriales sin resolver.</li>
+          <li>Dudas sobre legalización de instalaciones existentes.</li>
+          <li>Necesidad de justificar técnicamente una adaptación o cambio de uso.</li>
+          <li>Conflictos entre documentación visada, obra ejecutada y exigencias administrativas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p><strong>Formulario y mapa para solicitudes de informe, revisión técnica y asistencia pericial.</strong></p>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3>Formulario de contacto</h3>
+          <form action="#" method="POST" class="form">
+            <input type="text" name="nombre" placeholder="Nombre y apellidos" required />
+            <input type="email" name="email" placeholder="Correo electrónico" required />
+            <input type="tel" name="telefono" placeholder="Teléfono" />
+            <select name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="instalaciones-electricas">Instalaciones eléctricas</option>
+              <option value="proteccion-contra-incendios">Protección contra incendios</option>
+              <option value="energias-renovables">Energías renovables</option>
+              <option value="hvac-rite">HVAC / RITE</option>
+              <option value="autorizaciones-licencias">Autorizaciones y licencias</option>
+              <option value="cte">CTE en edificación</option>
+              <option value="tasaciones">Tasaciones</option>
+            </select>
+            <textarea name="mensaje" placeholder="Describe brevemente el problema, la ubicación y la urgencia..." required></textarea>
+            <button class="btn primary" type="submit">Enviar consulta</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Ubicación</h3>
+          <p>Atención técnica en España. Visitas a obra, revisión documental e informes periciales.</p>
+
+          <div class="map-wrapper">
+            <iframe
+              title="Mapa de ubicación"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-4.0550%2C39.8500%2C-3.9200%2C39.9400&layer=mapnik&marker=39.8628%2C-4.0273"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="contact-info">
+            <p><strong>Email:</strong> tuestudiodeperitos@gmail.com</p>
+            <p><strong>Teléfono:</strong> +34 686 728 623</p>
+            <p><strong>Horario:</strong> Lunes a viernes, 9:00 a 18:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Perito industrial colegiado en el Colegio de Ingenieros Industriales de Madrid especializado en instalaciones eléctricas, PCI, renovables, HVAC y CTE en edificación con incidencias en obra nueva.</p>
+    </footer>
+  </main>
+
+
+<script>
+(function() {
+  const hero = document.querySelector('.hero, .site-hero, .intro, .top-section, header.hero, header');
+  const header = document.querySelector('header');
+  const serviceSelect = document.getElementById('serviceSelect');
+  if (header) header.classList.add('scroll-header');
+
+  if (serviceSelect) {
+    serviceSelect.addEventListener('change', function() {
+      if (this.value) window.location.href = this.value;
+    });
+  }
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (hero) {
+    const animatedNodes = hero.querySelectorAll('h1, h2, p, .btn, .cta, .hero-card, .hero-copy');
+    animatedNodes.forEach((node, index) => {
+      if (!node.classList.contains('parallax-node') && index < 6) node.classList.add('parallax-node');
+    });
+  }
+
+  const onScroll = () => {
+    const y = window.scrollY || window.pageYOffset;
+    if (prefersReduced || !hero) return;
+    const nodes = hero.querySelectorAll('.parallax-node');
+    nodes.forEach((node, index) => {
+      const speed = 0.04 + (index * 0.015);
+      node.style.transform = `translate3d(0, ${Math.max(-2, y * speed)}px, 0)`;
+    });
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+
+
+</body>
+</html>
